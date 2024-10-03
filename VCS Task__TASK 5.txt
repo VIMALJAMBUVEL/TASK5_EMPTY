@@ -1,0 +1,547 @@
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+vimal@VimalJambuvel:~/TASK5_EMPTY$ ls
+script1.sh  script2.sh  script3.sh
+vimal@VimalJambuvel:~/TASK5_EMPTY$ ls -lrt
+total 12
+-rw-r--r-- 1 vimal vimal 165 Oct  3 07:59 script3.sh
+-rw-r--r-- 1 vimal vimal  33 Oct  3 07:59 script2.sh
+-rw-r--r-- 1 vimal vimal  40 Oct  3 07:59 script1.sh
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git branch
+* main
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git pull
+Already up to date.
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git branch
+* main
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git checkout dev
+branch 'dev' set up to track 'origin/dev'.
+Switched to a new branch 'dev'
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git branch
+* dev
+  main
+vimal@VimalJambuvel:~/TASK5_EMPTY$
+ *  History restored 
+
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+vimal@VimalJambuvel:~/TASK5_EMPTY$ ls
+script1.sh  script2.sh  script3.sh
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git branch
+* dev
+  main
+vimal@VimalJambuvel:~/TASK5_EMPTY$ cat script1.sh
+#!/bin/sh
+a=10
+echo "value of a is $a "
+vimal@VimalJambuvel:~/TASK5_EMPTY$ cat script2.sh
+#!/bin/bash
+echo " hello world "
+vimal@VimalJambuvel:~/TASK5_EMPTY$ cat script3.sh
+#!/bin/sh
+
+a = 10
+
+echo " value of a is $a "
+DATE = date
+echo date is $DATE
+
+USER = who | wc -l
+echo " Logged in user are $USER "
+
+UP = uptime
+echo " up time is $UP
+vimal@VimalJambuvel:~/TASK5_EMPTY$ pwd
+#!/bin/sh
+/home/vimal/TASK5_EMPTY
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git branch
+* dev
+  main
+vimal@VimalJambuvel:~/TASK5_EMPTY$
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git status
+On branch dev
+Your branch is up to date with 'origin/dev'.
+
+nothing to commit, working tree clean
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git status --list
+error: unknown option `list'
+usage: git status [<options>] [--] [<pathspec>...]
+
+    -v, --[no-]verbose    be verbose
+    -s, --[no-]short      show status concisely
+    -b, --[no-]branch     show branch information
+    --[no-]show-stash     show stash information
+    --[no-]ahead-behind   compute full ahead/behind values
+    --[no-]porcelain[=<version>]
+                          machine-readable output
+    --[no-]long           show status in long format (default)
+    -z, --[no-]null       terminate entries with NUL
+    -u, --[no-]untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+    --[no-]ignored[=<mode>]
+                          show ignored files, optional modes: traditional, matching, no. (Default: traditional)
+    --[no-]ignore-submodules[=<when>]
+                          ignore changes to submodules, optional when: all, dirty, untracked. (Default: all)
+    --[no-]column[=<style>]
+                          list untracked files in columns
+    --no-renames          do not detect renames
+    --renames             opposite of --no-renames
+    -M, --find-renames[=<n>]
+                          detect renames, optionally set similarity index
+
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git branch  --list
+* dev
+  main
+vimal@VimalJambuvel:~/TASK5_EMPTY$ vi script1.sh
+vimal@VimalJambuvel:~/TASK5_EMPTY$ cat script1.sh
+#!/bin/sh
+a=10
+echo "value of a is $a "
+b=20
+echo "value of b is $b"
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git checkout main
+M       script1.sh
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+vimal@VimalJambuvel:~/TASK5_EMPTY$ ls
+script1.sh  script2.sh  script3.sh
+vimal@VimalJambuvel:~/TASK5_EMPTY$ cat script1.sh 
+#!/bin/sh
+a=10
+echo "value of a is $a "
+b=20
+echo "value of b is $b"
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git checkout dev
+M       script1.sh
+Switched to branch 'dev'
+Your branch is up to date with 'origin/dev'.
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git add script1.sh
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git commit script1.sh -m "1st commit on script1"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: empty ident name (for <vimal@VimalJambuvel.>) not allowed
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git config --global user.email "vimal0292@gmail.com"
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git config --global user.name "vimal"
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git commit script1.sh -m "1st commit on script1"
+[dev 9ee2c65] 1st commit on script1
+ 1 file changed, 2 insertions(+)
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git status
+On branch dev
+Your branch is ahead of 'origin/dev' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+vimal@VimalJambuvel:~/TASK5_EMPTY$ cat script1.sh 
+#!/bin/sh
+a=10
+echo "value of a is $a "
+b=20
+echo "value of b is $b"
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git log --oneline
+9ee2c65 (HEAD -> dev) 1st commit on script1
+3e5f954 (origin/main, origin/dev, origin/QAT, origin/HEAD, main) rm in repo permanently
+3ddb0e4 deleted unwanted file vimal1 and 2
+6702d2a adding 3rd file
+f262570 sample2
+e36327c sample
+7e80ee1 script files
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+vimal@VimalJambuvel:~/TASK5_EMPTY$ ls
+script1.sh  script2.sh  script3.sh
+vimal@VimalJambuvel:~/TASK5_EMPTY$ cat script1.sh 
+#!/bin/sh
+a=10
+echo "value of a is $a "
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git branch
+  dev
+* main
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git merge dev
+Updating 3e5f954..9ee2c65
+Fast-forward
+ script1.sh | 2 ++
+ 1 file changed, 2 insertions(+)
+vimal@VimalJambuvel:~/TASK5_EMPTY$ cat script1.sh 
+#!/bin/sh
+a=10
+echo "value of a is $a "
+b=20
+echo "value of b is $b"
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git log
+commit 9ee2c65856d367831a3895ddaeb7550b7241abc9 (HEAD -> main, dev)
+Author: vimal <vimal0292@gmail.com>
+Date:   Thu Oct 3 09:52:39 2024 +0000
+
+    1st commit on script1
+
+commit 3e5f954b53480c7a261ee0bae628a7b126cc5ca0 (origin/main, origin/dev, origin/QAT, origin/HEAD)
+Author: vimal <vimal0293@gmail.com>
+Date:   Wed Oct 2 22:10:26 2024 +0530
+
+    rm in repo permanently
+
+commit 3ddb0e452908c9c3e7fee639cc9abf2869f61f36
+Author: vimal <vimal0293@gmail.com>
+Date:   Wed Oct 2 22:08:39 2024 +0530
+#!/bin/bash
+
+    deleted unwanted file vimal1 and 2
+
+commit 6702d2a8eb50279bdf0e1c19bcc21a715b972405
+Author: vimal <vimal0293@gmail.com>
+Date:   Wed Oct 2 22:05:53 2024 +0530
+
+    adding 3rd file
+
+commit f262570e89dafcdda9d4c13e27d042ace0bde7e6
+Author: vimal <vimal0293@gmail.com>
+Date:   Wed Oct 2 21:43:45 2024 +0530
+
+    sample2
+
+commit e36327c3df3c52e30bd0672838fedf4bfe9d2506
+Author: vimal <vimal0293@gmail.com>
+Date:   Wed Oct 2 21:42:10 2024 +0530
+
+    sample
+
+commit 7e80ee1d49e18816d49ac12b00909e75edd3749b
+Author: vimal <vimal0293@gmail.com>
+Date:   Wed Oct 2 18:46:09 2024 +0530
+
+
+[1]+  Stopped                 git log
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git branch
+  dev
+* main
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git checkout dev
+Switched to branch 'dev'
+Your branch is ahead of 'origin/dev' by 1 commit.
+  (use "git push" to publish your local commits)
+vimal@VimalJambuvel:~/TASK5_EMPTY$ ls
+script1.sh  script2.sh  script3.sh
+vimal@VimalJambuvel:~/TASK5_EMPTY$ cat script2.sh
+#!/bin/bash
+echo " hello world "
+vimal@VimalJambuvel:~/TASK5_EMPTY$ vi script2.sh
+vimal@VimalJambuvel:~/TASK5_EMPTY$ cat script2.sh 
+#!/bin/bash
+echo " hello world "
+echo " hello people "
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git add script2.sh 
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git commit script2.sh -m "1st commit on script2"
+[dev 3d1e6b5] 1st commit on script2
+ 1 file changed, 1 insertion(+)
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git status
+On branch dev
+Your branch is ahead of 'origin/dev' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git branch
+* dev
+  main
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git log --oneline
+3d1e6b5 (HEAD -> dev) 1st commit on script2
+9ee2c65 (main) 1st commit on script1
+3e5f954 (origin/main, origin/dev, origin/QAT, origin/HEAD) rm in repo permanently
+3ddb0e4 deleted unwanted file vimal1 and 2
+6702d2a adding 3rd file
+f262570 sample2
+e36327c sample
+7e80ee1 script files
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+vimal@VimalJambuvel:~/TASK5_EMPTY$ ls
+script1.sh  script2.sh  script3.sh
+vimal@VimalJambuvel:~/TASK5_EMPTY$ cat script2.sh 
+#!/bin/bash
+echo " hello world "
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git rebase script2.sh
+fatal: invalid upstream 'script2.sh'
+vimal@VimalJambuvel:~/TASK5_EMPTY$ cat script2.sh 
+#!/bin/bash
+echo " hello world "
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git rebase dev
+Successfully rebased and updated refs/heads/main.
+vimal@VimalJambuvel:~/TASK5_EMPTY$ cat script2.sh 
+#!/bin/sh
+#!/bin/bash
+echo " hello world "
+echo " hello people "
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git log oneline
+fatal: ambiguous argument 'oneline': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git log --oneline
+3d1e6b5 (HEAD -> main, dev) 1st commit on script2
+9ee2c65 1st commit on script1
+3e5f954 (origin/main, origin/dev, origin/QAT, origin/HEAD) rm in repo permanently
+3ddb0e4 deleted unwanted file vimal1 and 2
+6702d2a adding 3rd file
+f262570 sample2
+e36327c sample
+7e80ee1 script files
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git branch
+  dev
+* main
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git checkout dev
+Switched to branch 'dev'
+Your branch is ahead of 'origin/dev' by 2 commits.
+  (use "git push" to publish your local commits)
+vimal@VimalJambuvel:~/TASK5_EMPTY$ ls
+script1.sh  script2.sh  script3.sh
+vimal@VimalJambuvel:~/TASK5_EMPTY$ cat script3.sh
+#!/bin/sh
+
+a = 10
+
+echo " value of a is $a "
+DATE = date
+echo date is $DATE
+
+USER = who | wc -l
+echo " Logged in user are $USER "
+
+UP = uptime
+echo " up time is $UP
+vimal@VimalJambuvel:~/TASK5_EMPTY$ vi script3.sh
+vimal@VimalJambuvel:~/TASK5_EMPTY$ cat script3.sh 
+#!/bin/sh
+
+a = 10
+b = 20
+c = 30
+
+echo " value of a is $a "
+DATE = date
+echo date is $DATE
+
+USER = who | wc -l
+echo " Logged in user are $USER "
+
+UP = uptime
+echo " up time is $UP
+
+echo " value of b is $b "
+echo " value of c is $c "
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git stash
+
+Saved working directory and index state WIP on dev: 3d1e6b5 1st commit on script2
+vimal@VimalJambuvel:~/TASK5_EMPTY$
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git branch
+* dev
+  main
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git log --oneline
+3d1e6b5 (HEAD -> dev, main) 1st commit on script2
+9ee2c65 1st commit on script1
+3e5f954 (origin/main, origin/dev, origin/QAT, origin/HEAD) rm in repo permanently
+3ddb0e4 deleted unwanted file vimal1 and 2
+6702d2a adding 3rd file
+f262570 sample2
+e36327c sample
+7e80ee1 script files
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+vimal@VimalJambuvel:~/TASK5_EMPTY$ ls
+script1.sh  script2.sh  script3.sh
+vimal@VimalJambuvel:~/TASK5_EMPTY$ cat script3.sh 
+#!/bin/sh
+
+a = 10
+
+echo " value of a is $a "
+DATE = date
+echo date is $DATE
+
+USER = who | wc -l
+echo " Logged in user are $USER "
+
+UP = uptime
+echo " up time is $UP
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git branch
+  dev
+* main
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git stash apply
+On branch main
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   script3.sh
+
+no changes added to commit (use "git add" and/or "git commit -a")
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git checkout dev
+M       script3.sh
+Switched to branch 'dev'
+Your branch is ahead of 'origin/dev' by 2 commits.
+  (use "git push" to publish your local commits)
+vimal@VimalJambuvel:~/TASK5_EMPTY$ cat script3.sh 
+#!/bin/sh
+
+a = 10
+b = 20
+c = 30
+
+echo " value of a is $a "
+DATE = date
+echo date is $DATE
+
+USER = who | wc -l
+echo " Logged in user are $USER "
+
+UP = uptime
+echo " up time is $UP
+
+echo " value of b is $b "
+echo " value of c is $c "
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git status
+On branch dev
+Your branch is ahead of 'origin/dev' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   script3.sh
+
+no changes added to commit (use "git add" and/or "git commit -a")
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git add script3.sh 
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git commit script3.sh -m "1st commit on script3"
+[dev 1e613ff] 1st commit on script3
+ 1 file changed, 5 insertions(+)
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git status
+On branch dev
+Your branch is ahead of 'origin/dev' by 3 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git stash list
+stash@{0}: WIP on dev: 3d1e6b5 1st commit on script2
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git push
+Username for 'https://github.com': VIMALJAMBUVEL
+Password for 'https://VIMALJAMBUVEL@github.com':
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 940 bytes | 940.00 KiB/s, done.
+Total 9 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To https://github.com/VIMALJAMBUVEL/TASK5_EMPTY.git
+   3e5f954..1e613ff  dev -> dev
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git status
+On branch dev
+Your branch is up to date with 'origin/dev'.
+
+nothing to commit, working tree clean
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git branch
+* dev
+  main
+vimal@VimalJambuvel:~/TASK5_EMPTY$ ls
+script1.sh  script2.sh  script3.sh
+vimal@VimalJambuvel:~/TASK5_EMPTY$ cat script1.sh 
+#!/bin/sh
+a=10
+echo "value of a is $a "
+b=20
+echo "value of b is $b"
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+vimal@VimalJambuvel:~/TASK5_EMPTY$ ls
+script1.sh  script2.sh  script3.sh
+vimal@VimalJambuvel:~/TASK5_EMPTY$ cat script1.sh 
+#!/bin/sh
+a=10
+echo "value of a is $a "
+b=20
+echo "value of b is $b"
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git push
+Username for 'https://github.com': VIMALJAMBUVEL
+Password for 'https://VIMALJAMBUVEL@github.com':
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/VIMALJAMBUVEL/TASK5_EMPTY.git
+   3e5f954..3d1e6b5  main -> main
+vimal@VimalJambuvel:~/TASK5_EMPTY$ cat script2.sh 
+#!/bin/bash
+echo " hello world "
+echo " hello people "
+vimal@VimalJambuvel:~/TASK5_EMPTY$ cat script3.sh 
+#!/bin/sh
+
+a = 10
+
+echo " value of a is $a "
+DATE = date
+echo date is $DATE
+
+USER = who | wc -l
+echo " Logged in user are $USER "
+
+UP = uptime
+echo " up time is $UP
+vimal@VimalJambuvel:~/TASK5_EMPTY$ git checkout dev
+Switched to branch 'dev'
+Your branch is up to date with 'origin/dev'.
+vimal@VimalJambuvel:~/TASK5_EMPTY$ cat script1.sh 
+#!/bin/sh
+a=10
+echo "value of a is $a "
+b=20
+echo "value of b is $b"
+vimal@VimalJambuvel:~/TASK5_EMPTY$ cat script2.sh 
+#!/bin/bash
+echo " hello world "
+echo " hello people "
+vimal@VimalJambuvel:~/TASK5_EMPTY$ cat script3.sh 
+#!/bin/sh
+
+a = 10
+b = 20
+c = 30
+
+echo " value of a is $a "
+DATE = date
+echo date is $DATE
+
+USER = who | wc -l
+echo " Logged in user are $USER "
+
+UP = uptime
+echo " up time is $UP
+
+echo " value of b is $b "
+echo " value of c is $c "
+vimal@VimalJambuvel:~/TASK5_EMPTY$
